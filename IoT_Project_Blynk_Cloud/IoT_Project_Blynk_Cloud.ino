@@ -1,6 +1,30 @@
+
+
+/*
+            *******Some Important Resource which help's me to write this code**********
+         -----------------------------------------------------------------------------------------
+
+    The core explanation of this code: https://www.electroinvention.co.in/wifi-controlled-home-automation-using-esp8266-node-mcu/
+    Link of Blynk Cloud HTTPS REST API Documentation:  https://docs.blynk.io/en/blynk.cloud/https-api-overview
+    Reading virtual Pin value: https://community.blynk.cc/t/virtual-pin-reading/1185/3       &       https://forum.arduino.cc/t/reading-a-blynk-virtual-pin/507922
+    Using BLYNK_WRITE() into loop():  https://community.blynk.cc/t/solved-using-blynk-write-with-loop/10369
+    
+ */
+
+
+
+
+
+
+
+
+
 //If D1,D2,D3 aren't work then select board as "NodeMcu 1.0(ESP-12E Module)" from Tools->Board.
 
 // wifi controlled home automation using Blynk App & ESP8266
+
+
+
 #define BLYNK_TEMPLATE_ID "TMPLmnbflYhu" //blynk template ID
 #define BLYNK_TEMPLATE_NAME "Quickstart Template" //blynk template  name
 #define BLYNK_AUTH_TOKEN "3yj65_OKC42XbMAsbzoHicMcTb8iiXOo" // enter your blynk auth token
@@ -8,6 +32,7 @@
 #define BLYNK_PRINT Serial
 #include <gpio.h>
 #include <ESP8266WiFi.h>
+#include <Blynk.h>
 #include <BlynkSimpleEsp8266.h>
 
 char auth[] = BLYNK_AUTH_TOKEN;
