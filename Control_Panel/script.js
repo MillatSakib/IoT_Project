@@ -49,7 +49,7 @@ function toggleButtonState(event) {
 checkStateAndUpdateToggle();
 
 // Check the state and update toggle switches every 1 second
-setInterval(checkStateAndUpdateToggle, 1000);
+setInterval(checkStateAndUpdateToggle, 2000);
 
 // Add event listener to each checkbox for manual state changes
 checkboxes.forEach((checkbox, index) => {

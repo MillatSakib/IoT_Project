@@ -144,6 +144,7 @@ void setup()
   pinMode(Switch2, INPUT_PULLUP);
   pinMode(Switch3, INPUT_PULLUP);
   pinMode(Switch4, INPUT_PULLUP);
+  pinMode(D0,OUTPUT);
   pinMode(D5, OUTPUT); 
   pinMode(D6, OUTPUT); 
   pinMode(D7, OUTPUT); 
@@ -169,4 +170,25 @@ void loop()
   Serial.println(digitalRead(Switch3));
   Serial.println(digitalRead(Switch4));
   }
+
+  //if blynk couldn't connect
+  if(!Blynk.connected()){
+    digitalWrite(D0,HIGH);
+    for(;Blynk.connected()==0;){
+      Blynk.run();
+      if((digitalRead(Switch1) && digitalRead(Switch2) && digitalRead(Switch3) && digitalRead(Switch4))==0){
+  switchcntrl();
+  Serial.println(digitalRead(Switch1));
+  Serial.println(digitalRead(Switch2));
+  Serial.println(digitalRead(Switch3));
+  Serial.println(digitalRead(Switch4));
+  
+    }
+   }
+   update_blynk();
+  }
+  else{
+    digitalWrite(D0,LOW);
+  }
+  
 }
