@@ -1,3 +1,13 @@
+.online {
+  color: rgb(74, 255, 74);
+  font-size: 25px;
+}
+.offline {
+  color: rgb(255, 79, 79);
+  font-size: 25px;
+}
+
+
 h1{
     font-size:50px;
     font-style: normal;
