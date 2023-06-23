@@ -33,17 +33,19 @@ h1{
     
 }
 body {
-    color: #ffffff;
-    display:grid;
-    font-size:20px;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("https://raw.githubusercontent.com/MillatSakib/IoT_Project/main/Control_Panel/aurora.jpg");
+  color: #ffffff;
+  display: grid;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://raw.githubusercontent.com/MillatSakib/IoT_Project/main/Control_Panel/aurora.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  }
+  background-attachment: fixed;
+}
+
   
   .toggle {
     position: relative;
