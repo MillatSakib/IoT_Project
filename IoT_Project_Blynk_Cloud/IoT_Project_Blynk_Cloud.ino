@@ -9,7 +9,8 @@
     Link of Blynk Cloud HTTPS REST API Documentation:  https://docs.blynk.io/en/blynk.cloud/https-api-overview
     Reading virtual Pin value: https://community.blynk.cc/t/virtual-pin-reading/1185/3       &       https://forum.arduino.cc/t/reading-a-blynk-virtual-pin/507922
     Using BLYNK_WRITE() into loop():  https://community.blynk.cc/t/solved-using-blynk-write-with-loop/10369
-    helps:https://www.youtube.com/watch?v=tCeiSfuuGmY
+    Programme Related helps:https://www.youtube.com/watch?v=tCeiSfuuGmY
+    Switch related help: https://www.youtube.com/watch?v=psQk6hVZSAw
 
 
     API Link:Read Data stream value: https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v2   //light 3
