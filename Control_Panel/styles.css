@@ -1,8 +1,21 @@
+h1{
+    font-size:50px;
+    font-style: normal;
+    text-decoration: underline;
+    color: #ffffff;
+    
+}
 body {
-    display: flex;
+    color: #ffffff;
+    display:grid;
+    font-size:20px;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("aurora.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   }
   
   .toggle {
