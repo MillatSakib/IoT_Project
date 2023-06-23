@@ -1,6 +1,6 @@
 #loading-animation {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -39,7 +39,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("aurora.jpg");
+    background-image: url("https://raw.githubusercontent.com/MillatSakib/IoT_Project/main/Control_Panel/aurora.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
