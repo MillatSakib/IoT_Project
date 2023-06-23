@@ -1,44 +1,52 @@
-const checkbox = document.querySelector('input[type="checkbox"]');
-const messageElement = document.getElementById('message');
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const messageElements = document.querySelectorAll('.message');
 
 function checkStateAndUpdateToggle() {
-  const url = 'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v2';
+  const urls = [
+    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v0',
+    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v1',
+    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v2',
+    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v3'
+  ];
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const state = xhr.responseText.trim();
+  urls.forEach((url, index) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const state = xhr.responseText.trim();
 
-      // Update toggle switch based on the state
-      checkbox.checked = state === '1';
+        // Update toggle switch based on the state
+        checkboxes[index].checked = state === '1';
 
-      // Update message based on the state
-      if (state === '1') {
-        messageElement.textContent = 'Light 2 now is ON';
-      } else {
-        messageElement.textContent = 'Light 2 is now OFF';
+        // Update message based on the state
+        if (state === '1') {
+          messageElements[index].textContent = 'Light ${index + 1} is now ON';
+        } else {
+          messageElements[index].textContent = 'Light ${index + 1} is now OF';
+        }
       }
-    }
-  };
-  xhr.send();
+    };
+    xhr.send();
+  });
 }
 
-function toggleButtonState() {
+function toggleButtonState(event) {
+  const checkbox = event.target;
   const currentState = checkbox.checked ? '1' : '0';
-  const url = `https://blynk.cloud/external/api/update?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v2=${currentState}`;
+  const index = Array.from(checkboxes).indexOf(checkbox);
+  const url = `https://blynk.cloud/external/api/update?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v${index}=${currentState}`;
 
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log('Toggle button state changed successfully.');
-
+      console.log(`Toggle button ${index + 1} state changed successfully.`);
       // Update message based on the new state
       if (currentState === '1') {
-        messageElement.textContent = 'Light is on';
+        messageElements[index].textContent = 'Light ${index + 1} is now ON';
       } else {
-        messageElement.textContent = '';
+        messageElements[index].textContent = 'Light ${index + 1} is now OFF';
       }
     }
   };
@@ -48,8 +56,10 @@ function toggleButtonState() {
 // Call the function initially
 checkStateAndUpdateToggle();
 
-// Check the state and update toggle switch every 1 second
+// Check the state and update toggle switches every 1 second
 setInterval(checkStateAndUpdateToggle, 1000);
 
-// Add event listener to the checkbox for manual state changes
-checkbox.addEventListener('change', toggleButtonState);
+// Add event listener to each checkbox for manual state changes
+checkboxes.forEach((checkbox, index) => {
+  checkbox.addEventListener('change', toggleButtonState);
+});
