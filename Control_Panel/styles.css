@@ -6,7 +6,10 @@
   color: rgb(255, 79, 79);
   font-size: 25px;
 }
-
+.error {
+  color: rgb(255, 104, 104);
+  font-size: 30px;
+}
 
 h1{
     font-size:50px;
@@ -48,7 +51,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ff9898;
+    background-color: #f76666;
     transition: 0.4s;
     border-radius: 34px;
   }
