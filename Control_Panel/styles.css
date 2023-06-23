@@ -1,3 +1,17 @@
+#loading-animation {
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Set a higher z-index value */
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .online {
   color: rgb(74, 255, 74);
   font-size: 25px;

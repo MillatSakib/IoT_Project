@@ -49,8 +49,8 @@ int load1,load2,load3,load4;
 
 char auth[] = BLYNK_AUTH_TOKEN;
 
-char ssid[] = "Millat"; // Your Wifi Name
-char pass[] = "12345678"; // Your Wifi Password
+char ssid[] = "T19i"; // Your Wifi Name
+char pass[] = "55mEd@42"; // Your Wifi Password
 
 void update_blynk(){
 Blynk.virtualWrite(V0, load1);  
