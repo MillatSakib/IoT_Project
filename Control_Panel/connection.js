@@ -7,13 +7,13 @@ function checkDeviceStatus() {
         if (data === true) {
           // Update the message and text color for online status
           const statusElement = document.getElementById("status");
-          statusElement.textContent = "Device is online!";
+          statusElement.textContent = "Controller Device is online!";
           statusElement.classList.remove("offline", "error");
           statusElement.classList.add("online");
         } else {
           // Update the message and text color for offline status
           const statusElement = document.getElementById("status");
-          statusElement.textContent = "Device is offline!";
+          statusElement.textContent = "Controller Device is offline!";
           statusElement.classList.remove("online", "error");
           statusElement.classList.add("offline");
         }
