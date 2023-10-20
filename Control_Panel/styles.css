@@ -1,3 +1,23 @@
+#lgout:hover{
+  cursor: pointer;
+  background-color: #2c3e50;
+  color: #f1c40f;
+  
+  
+}
+#lgout{
+display: block;
+  margin: 20px;
+  padding: 20px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.3);
+  align-items: center;
+  justify-content: center;
+  color: beige;
+  font-weight: bold;
+  transition: 1s;
+}
 #loading-animation {
   width: 100px;
   height: 100px;

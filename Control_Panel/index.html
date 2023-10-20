@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="./logout.js"></script>
+  <script src="notLogin.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="preload" href="https://raw.githubusercontent.com/MillatSakib/IoT_Project/main/Control_Panel/aurora.jpg" as="image">
@@ -8,6 +10,27 @@
   <title>Home Automation</title>
 </head>
 <body>
+
+
+<button id="lgout">Log Out</button>
+
+<script>
+    var lgoutElement = document.getElementById('lgout');
+      if (lgoutElement) {
+        lgoutElement.addEventListener("click", function (e) {
+          // Clear the login state in local storage.
+          console.log('Logout.')
+          localStorage.removeItem("loggedIn");
+          // Redirect the user to the login page.
+          window.location.href = "login.html";
+        });
+      }
+  </script>
+
+
+
+
+
   <div id="loading-animation">
     <img src="loading.gif" alt="Can't Loaded">
   </div>
@@ -45,6 +68,9 @@
     </div>
   </div>
 </strong>
+
+
+
   <script src="script.js"></script>
   <script src="connection.js"></script>
 
@@ -54,4 +80,7 @@
 
 
 </body>
-</html>
+</html> 
+
+
+
