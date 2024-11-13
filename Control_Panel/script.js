@@ -3,16 +3,16 @@ const messageElements = document.querySelectorAll('.message');
 
 function checkStateAndUpdateToggle() {
   const urls = [
-    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v0',
-    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v1',
-    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v2',
-    'https://blynk.cloud/external/api/get?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v3'
+    'https://blynk.cloud/external/api/get?token=iFGIF3ytEx3ZtBDM3jjbA6JXEAW6Rdm5&v0',
+    'https://blynk.cloud/external/api/get?token=iFGIF3ytEx3ZtBDM3jjbA6JXEAW6Rdm5&v1',
+    'https://blynk.cloud/external/api/get?token=iFGIF3ytEx3ZtBDM3jjbA6JXEAW6Rdm5&v2',
+    'https://blynk.cloud/external/api/get?token=iFGIF3ytEx3ZtBDM3jjbA6JXEAW6Rdm5&v3'
   ];
 
   urls.forEach((url, index) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         const state = xhr.responseText.trim();
 
@@ -20,7 +20,7 @@ function checkStateAndUpdateToggle() {
         checkboxes[index].checked = state === '1';
 
         // Update message based on the state
-       
+
       }
     };
     xhr.send();
@@ -31,15 +31,15 @@ function toggleButtonState(event) {
   const checkbox = event.target;
   const currentState = checkbox.checked ? '1' : '0';
   const index = Array.from(checkboxes).indexOf(checkbox);
-  const url = 'https://blynk.cloud/external/api/update?token=3yj65_OKC42XbMAsbzoHicMcTb8iiXOo&v' + index + '=' + currentState;
+  const url = 'https://blynk.cloud/external/api/update?token=iFGIF3ytEx3ZtBDM3jjbA6JXEAW6Rdm5&v' + index + '=' + currentState;
 
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       console.log('Toggle button ' + (index + 1) + ' state changed successfully.');
 
-      
+
     }
   };
   xhr.send();
